@@ -12,34 +12,39 @@ import csv
 
 apple_words= ['Apple', 'iPhone', 'iPad', 'Mac', 'iOS']
 
+###DO NOT INCLUDE In SHARED FILE###
+consumer_key = 'hQSqSVXIKuydP6wwQXhN0Q61E'
+consumer_secret = 'CpFWabKVlGn27WzaQrvTspQhC0oOXPNkg8gjDNgWyjZMaH2oFT'
+access_token = '911467311328002048-NtCItPcv277CqOIbIYikIUcwW0msGGh'
+access_token_secret = 'XMl0UMBXWsZpKtWEiU0jVaW7aDwYJiDe0Vq7mJW4pPQ62'
+####################################
 
 #modify Streamlistener to print out stream
 #definition here: https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py
 class MyStreamListener(StreamListener):
 
+
     #initialize values
-    def __init__(self, api=None, start_time = time.time(), time_limit = 5):
+    def __init__(self, start_time=time.time(), api=None, time_limit = 5):
         self.api = api
-<<<<<<< HEAD
         self.start = start_time
         self.end = time_limit+start_time
         self.tweets = [] #stores all data to add to file
-=======
->>>>>>> f686245b3f944af34c1921ff1bc792cecd4ff01f
         
     #what happens on each iteration
-    def on_status(self, data):
-  
-        
+    def on_status(self, status):
         while (time.time() <self.end): 
-            self.tweets.append([data.text])
-            print(data.text)
+            self.tweets.append(status)
+            print("Getting tweet from %s" %(status._json['user']['screen_name']))
             return True #somehow stops program from reprinting same tweet
         
-        #csv_file = open("Twitter_Stream.csv",'w', newline = ' ', encoding = 'utf-8') 
-        #writer = csv.writer()
-#         for tweet in self.tweets:
-#             writer.writerow(tweet)
+        with open('twitter.csv', 'w', newline='', encoding = 'utf-8') as csvfile:
+            writer = csv.writer(csvfile)
+            for tweet in self.tweets:
+                writer.writerow([tweet._json['user']['screen_name'], tweet._json['text'],
+                                 tweet._json['retweet_count']])
+                print('@%s tweeted: %s' %(tweet._json['user']['screen_name'], tweet._json['text']))
+                 
     def on_error(self, status_code):
         if status_code == 420:
             #returning False in on_data disconnects the stream
