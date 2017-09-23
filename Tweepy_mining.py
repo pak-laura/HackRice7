@@ -25,7 +25,6 @@ class MyStreamListener(StreamListener):
     #initialize values
     def __init__(self, api=None, time_limit = 60):
         self.api = api
-        self.
         
     def on_status(self, status):
         print(status.text)
