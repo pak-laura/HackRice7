@@ -2,8 +2,10 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import csv
 import pandas
 
+
+fileCo = 'Microsoft.csv'
 colnames = ['user','text','retweets']
-data = pandas.read_csv('Apple.csv',names=colnames)
+data = pandas.read_csv(fileCo,names=colnames)
 list0 = data.text.tolist()
 
 sent_analyzer = SentimentIntensityAnalyzer()
