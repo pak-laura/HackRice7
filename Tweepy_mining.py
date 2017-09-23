@@ -11,12 +11,6 @@ from tweepy.streaming import StreamListener
 
 apple_words= ['Apple', 'iPhone', 'iPad', 'Mac', 'iOS']
 
-###DO NOT INCLUDE In SHARED FILE###
-consumer_key = 'hQSqSVXIKuydP6wwQXhN0Q61E'
-consumer_secret = 'CpFWabKVlGn27WzaQrvTspQhC0oOXPNkg8gjDNgWyjZMaH2oFT'
-access_token = '911467311328002048-NtCItPcv277CqOIbIYikIUcwW0msGGh'
-access_token_secret = 'XMl0UMBXWsZpKtWEiU0jVaW7aDwYJiDe0Vq7mJW4pPQ62'
-####################################
 
 #modify Streamlistener to print out stream
 #definition here: https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py
