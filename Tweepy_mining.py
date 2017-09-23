@@ -10,9 +10,14 @@ from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
 import csv
 
+<<<<<<< HEAD
 ###DO NOT INCLUDE In SHARED FILE###
 
 ####################################
+=======
+apple_words= ['Apple', 'iPhone', 'iPad', 'Mac', 'iOS']
+
+>>>>>>> d68757008b9c46ef784de3230467e46ca59063e6
 
 #modify Streamlistener to print out stream
 #definition here: https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py
@@ -63,3 +68,9 @@ AppleStream = tweepy.Stream(auth = api.auth, listener=AppleListener )
 AppleStream.filter(track=apple_words, languages = ['en'])
 
 
+<<<<<<< HEAD
+=======
+# public_tweets = api.home_timeline()
+# for tweet in public_tweets:
+#     print(tweet.text)
+>>>>>>> d68757008b9c46ef784de3230467e46ca59063e6
