@@ -8,28 +8,35 @@ import time
 from tweepy import Stream
 from tweepy import OAuthHandler
 from tweepy.streaming import StreamListener
+import csv
 
 apple_words= ['Apple', 'iPhone', 'iPad', 'Mac', 'iOS']
 
-###DO NOT INCLUDE In SHARED FILE###
-consumer_key = 'hQSqSVXIKuydP6wwQXhN0Q61E'
-consumer_secret = 'CpFWabKVlGn27WzaQrvTspQhC0oOXPNkg8gjDNgWyjZMaH2oFT'
-access_token = '911467311328002048-NtCItPcv277CqOIbIYikIUcwW0msGGh'
-access_token_secret = 'XMl0UMBXWsZpKtWEiU0jVaW7aDwYJiDe0Vq7mJW4pPQ62'
-####################################
 
 #modify Streamlistener to print out stream
 #definition here: https://github.com/tweepy/tweepy/blob/master/tweepy/streaming.py
 class MyStreamListener(StreamListener):
 
     #initialize values
-    def __init__(self, api=None, time_limit = 60):
+    def __init__(self, api=None, start_time = time.time(), time_limit = 5):
         self.api = api
-        self.
+        self.start = start_time
+        self.end = time_limit+start_time
+        self.tweets = [] #stores all data to add to file
         
-    def on_status(self, status):
-        print(status.text)
+    #what happens on each iteration
+    def on_status(self, data):
+  
         
+        while (time.time() <self.end): 
+            self.tweets.append([data.text])
+            print(data.text)
+            return True #somehow stops program from reprinting same tweet
+        
+        #csv_file = open("Twitter_Stream.csv",'w', newline = ' ', encoding = 'utf-8') 
+        #writer = csv.writer()
+#         for tweet in self.tweets:
+#             writer.writerow(tweet)
     def on_error(self, status_code):
         if status_code == 420:
             #returning False in on_data disconnects the stream
