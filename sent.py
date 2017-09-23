@@ -25,9 +25,9 @@ for tweet in list0:
 		neg_count += 1
 	else:
 		neu_count += 1
-	
+	print(tweet)
 	for k in sorted(ss):
-		k = compound,neg,neu,pos, ss[k] = some number
+	#	k = compound,neg,neu,pos, ss[k] = some number
 		print('{0}: {1}, '.format(k,ss[k]),end ='')
 	print() #adds newline after scores print
 
