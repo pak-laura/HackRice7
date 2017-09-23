@@ -20,9 +20,12 @@ class MyStreamListener(StreamListener):
     #initialize values
     def __init__(self, api=None, start_time = time.time(), time_limit = 5):
         self.api = api
+<<<<<<< HEAD
         self.start = start_time
         self.end = time_limit+start_time
         self.tweets = [] #stores all data to add to file
+=======
+>>>>>>> f686245b3f944af34c1921ff1bc792cecd4ff01f
         
     #what happens on each iteration
     def on_status(self, data):
