@@ -28,6 +28,6 @@ We show that there is a significant relationship between the stock prices and tw
 * We built the frontend mainly to provide the user with an intuitive interface with which to allow the user to monitor their stocks and see the projected stock prices. This allows them to make informed decisions on buying and selling their shares.
 
 # Where do we go from here?
-We have also used LSTM and RNN to build a keras and Tensorflow based Stock price predictor which takes data worth over a couple of years(12 years or so) in order to try and predict stock prices accurately. This would also take into consideration the variable factors present aorund the user and the need to evolve. 
-The ability to pull new data from various sources and aggregate them all to provide a robust data source and thus improve the estimation level of the system. This coupled with Artificial Intelligenece could provide better results and thus eliminate the need or presence of human error.
+We have also used long short-term memory (LSTM), a recurrent neural network (RNN), to build a Keras- and TensorFlow-based stock price predictor that takes data from over a 12 or so years in order to predict stock prices accurately. This would also take into consideration the variable factors present around the user and the need to evolve. 
+The ability to pull new data from various sources and aggregate them all provides a robust data source and thus improves the estimation accuracy of the system. This coupled with Artificial Intelligence could provide better results and thus eliminate human error.
 
