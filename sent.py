@@ -3,7 +3,6 @@
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import csv
 import pandas
-import re
 
 fileCo = 'Google.csv'
 colnames = ['user','text','date']
@@ -28,7 +27,7 @@ with open('results.csv', 'w', newline='') as csvfile:
 			neu_count=0
 			total_count=0
 			date0 = date[4:10]
-
+			#end if statement
 		ss = sent_analyzer.polarity_scores(tweet)
 		if ss['compound'] > 0:
 			pos_count += 1
@@ -37,6 +36,8 @@ with open('results.csv', 'w', newline='') as csvfile:
 		else:
 			neu_count += 1
 		total_count += 1
+		#end for loop
+	wrote.writerow([date[4:10], pos_count/total_count, neg_count/total_count, neu_count/total_count])
 
 #	print(tweet)
 #	for k in sorted(ss):
