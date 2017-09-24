@@ -1,15 +1,14 @@
-Stock prices are extremely volatile.
-As events affect our lives, we affect stock prices in turn.
-So, in this second-hand way, events such as a breaking scandal or a natural disaster affect stock prices, often severely.
+# HackRice7
+Our Hackathon Project is used to predict stock prices based on market and sentiment analysis.
 
-These events also affect social media for the simple reason that we talk online about what affects us in real life.
-We try to find the third-hand relationship between social media and stock prices.
-Our goal is to predict stock prices using data from social media
+Use different available APIs for:
+1. Text Analysis
+2. NLP
+3. Sentiment Analysis
+4. Twitter Feeds
 
+Build a stock index predictor on the basis of the market sentiments of certain products
+See how they would match up against prediction made usign historical data.
+This would allow us to measure accuracy of the prediction.
 
-First, we pull real-time tweets about a specific company.
-Then, we run sentiment analysis to find out what percentages of those tweets are positive, negative, and neutral.
-With that data, we neural networks ML to predict stock prices.
-Finally, we check our predictions against the something something to determine the presecence or lack of a correlation.
-
-We present our findings in a website where you can search stocks.
+Build a Markowitz model for portfolio management and ensure that the best investment is made for the user.
