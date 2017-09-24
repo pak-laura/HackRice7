@@ -40,7 +40,7 @@ class MyStreamListener(StreamListener):
             writer = csv.writer(csvfile)
             for tweet in self.tweets:
                 writer.writerow([tweet._json['user']['screen_name'], tweet._json['text'],
-                                tweet._json['retweet_count']])
+                                tweet._json['created_at']])
                 print('@%s tweeted: %s' %(tweet._json['user']['screen_name'], tweet._json['text']))
         return False       
        
@@ -57,19 +57,20 @@ auth.set_access_token(access_token, access_token_secret)
 
 api = tweepy.API(auth)
 
-apple_words= ['Apple', 'iPhone', 'iPad', 'Mac', 'iOS']
-google_words = ['Google','google','gmail']
-microsoft_words = ['Microsoft', 'microsoft', 'windows', 'powerpoint', 'xbox']
-samsung_words = ['android', 'galaxy tab', 'samsung']
+apple_words= ['Apple', 'iPhone', 'iPad', 'Mac', 'iOS', 'Siri','siri']
+google_words = ['Google','google','gmail', 'Chromebook']
+microsoft_words = ['Microsoft', 'microsoft', 'windows 8', 'windows 10',
+                   'windows 7', 'powerpoint', 'xbox', 'onedrive','onenote']
+samsung_words = ['android', 'galaxy tab', 'Galaxy Tab', 'samsung', 'Samsung',]
 
-stream_length = 60 #in seconds
+stream_length = 5 #in seconds
 
 #Create stream listeners and filters
 #languages = ['en'] for English tweets only
 #async = True parameter ensures the stream will run on a new thread
 AppleListener = MyStreamListener(filename = 'Apple.csv', time_limit = stream_length)
 AppleStream = tweepy.Stream(auth = api.auth, listener=AppleListener )
-AppleStream.filter(track=apple_words, languages = ['en'], async=True)
+AppleStream.filter(track=apple_words, languages = ['en'],async=True)
 
 GoogleListener = MyStreamListener(filename = 'Google.csv', time_limit = stream_length)
 GoogleStream = tweepy.Stream(auth = api.auth, listener=GoogleListener )
