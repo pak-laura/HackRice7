@@ -18,6 +18,7 @@ total_count=0
 date0 = listDate[0][4:10]
 with open('results.csv', 'w', newline='') as csvfile:
 	wrote = csv.writer(csvfile)
+	wrote.writerow(['Date','Positive Tweets %','Negative Tweets %', 'Neutral Tweets %'])
 
 	for tweet, date in zip(listText, listDate):
 		if date[4:10] != date0: #new date
