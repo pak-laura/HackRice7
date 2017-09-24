@@ -1,3 +1,4 @@
+
 # HackRice7
 The Project that we decided to develop in this Hackathon was to predict the price of a particular stock index for the future based on the Tweets and the sentimental values that they associate with that company at that given point of time.
 
@@ -29,6 +30,4 @@ We show that there is a significant relationship between the stock prices and tw
 # Where do we go from here?
 We have also used LSTM and RNN to build a keras and Tensorflow based Stock price predictor which takes data worth over a couple of years(12 years or so) in order to try and predict stock prices accurately. This would also take into consideration the variable factors present aorund the user and the need to evolve. 
 The ability to pull new data from various sources and aggregate them all to provide a robust data source and thus improve the estimation level of the system. This coupled with Artificial Intelligenece could provide better results and thus eliminate the need or presence of human error.
-
-
 
